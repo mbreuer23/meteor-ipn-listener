@@ -11,7 +11,7 @@ $ meteor add planefy:paypal-ipn-listener
 
 Server-side only:
 ```javascript
-import { IpnListener } from 'meteor:planefy-ipn-listener';
+import { IpnListener } from 'meteor/planefy:paypal-ipn-listener';
 
 const myListener = new IpnListener({
     path: '/ipn',
