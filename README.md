@@ -43,14 +43,13 @@ const myListener = new IpnListener({
 ### Testing
 
 #### From the client
-
-
+From the client, you can do: 
 ```javascript
 let url = Meteor.absoluteUrl('ipn');
 HTTP.post(url, { data: { test: 1 } } );
 ```
 
-Note since this is an invalid IPN (e.g. didnt come from PayPal), the onError hook should be triggered, unless you've defined your own 'verify' function (see options above).
+Note that since this is not a valid IPN (e.g. didn't come from PayPal), it will not be verified and your listener's onError hook will be triggered.  You can define your own verify function (see options above) to override this.  **Only override the verify function in development**
 
 
 #### Using PayPal IPN Simulator
