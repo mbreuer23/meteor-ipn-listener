@@ -20,34 +20,21 @@ Package.onUse(function(api) {
   api.use([
     'ecmascript',
     'underscore',
-<<<<<<< HEAD
     'http',
     'ejson',
     'meteorhacks:picker@1.0.3',
   ]);
 
   api.mainModule('listener.js', 'server');
-=======
-    'meteorhacks:picker@1.0.3',
-  ]);
-
-  api.mainModule('paypal-ipn-listener.js', 'server');
->>>>>>> 91c5fa8221aedff568ac111f030309a351b42463
 });
 
 Package.onTest(function(api) {
   api.use('planefy:paypal-ipn-listener');
   api.use('ecmascript');
   api.use('http');
-<<<<<<< HEAD
   api.use('ejson');
   api.use('practicalmeteor:chai@2.1.0');
   api.use('practicalmeteor:sinon@1.14.1_2');
 
   api.mainModule('listener.tests.js', 'server');
-=======
-  api.use('practicalmeteor:chai@2.1.0');
-
-  api.mainModule('paypal-ipn-listener-tests.js');
->>>>>>> 91c5fa8221aedff568ac111f030309a351b42463
 });
