@@ -1,10 +1,10 @@
 Package.describe({
   name: 'planefy:paypal-ipn-listener',
-  version: '0.0.1',
+  version: '1.0.0',
   // Brief, one-line summary of the package.
   summary: 'Simple PayPal IPN listener for Meteor',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/mbreuer23/meteor-ipn-listener.git',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -20,17 +20,21 @@ Package.onUse(function(api) {
   api.use([
     'ecmascript',
     'underscore',
+    'http',
+    'ejson',
     'meteorhacks:picker@1.0.3',
   ]);
 
-  api.mainModule('paypal-ipn-listener.js', 'server');
+  api.mainModule('listener.js', 'server');
 });
 
 Package.onTest(function(api) {
   api.use('planefy:paypal-ipn-listener');
   api.use('ecmascript');
   api.use('http');
+  api.use('ejson');
   api.use('practicalmeteor:chai@2.1.0');
+  api.use('practicalmeteor:sinon@1.14.1_2');
 
-  api.mainModule('paypal-ipn-listener-tests.js');
+  api.mainModule('listener.tests.js', 'server');
 });
