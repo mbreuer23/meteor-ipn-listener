@@ -47,6 +47,7 @@ const myListener = new IpnListener(options);
 ### API  
 
 **myListener.url()**
+
 Return the full URL of the registered listener
 
 ```javascript
@@ -58,6 +59,7 @@ console.log(otherListener.url()) // http://example.ngrok.io/ipn
 ```
 
 **myListener.post(httpOptions, [options])**
+
 Post data to your listener, e.g. for testing. By default, this will not attempt to verify the IPN with PayPal.  Pass {verify : true } as the second paramter to override this behavior (e.g. for error testing).
 
 First parameter, httpOptions, is passed direction to HTTP.post (```http://docs.meteor.com/api/http.html#HTTP-post```).
@@ -112,13 +114,3 @@ const myListener = new IpnListener({
 Log in to your PayPal developer account and go to https://developer.paypal.com/developer/ipnSimulator/
 
 Enter the IPN handler URL using the ngrok url combined with your IPN path, e.g. ```http://1c2fce0e.ngrok.io/ipn```
-
-
-
-
-
-
-
-
-
->>>>>>> 91c5fa8221aedff568ac111f030309a351b42463
