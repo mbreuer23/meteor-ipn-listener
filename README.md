@@ -46,6 +46,17 @@ const myListener = new IpnListener(options);
 
 ### API  
 
+**myListener.onVerified(handler)**
+
+register a handler for verified ipns.  handler should be a function that accepts two arguments: error and ipn.
+
+You can register multiple handlers.  
+
+**myListener.onError(handler)**
+register a handler for errors, e.g. if the IPN can't be verified
+
+You can register multiple error handlers.
+
 **myListener.url()**
 
 Return the full URL of the registered listener
