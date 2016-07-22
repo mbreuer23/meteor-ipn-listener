@@ -112,3 +112,13 @@ const myListener = new IpnListener({
 Log in to your PayPal developer account and go to https://developer.paypal.com/developer/ipnSimulator/
 
 Enter the IPN handler URL using the ngrok url combined with your IPN path, e.g. ```http://1c2fce0e.ngrok.io/ipn```
+
+
+
+
+
+
+
+
+
+>>>>>>> 91c5fa8221aedff568ac111f030309a351b42463
