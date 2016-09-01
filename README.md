@@ -69,7 +69,7 @@ const otherListener = new IpnListener({ path: 'ipn', host: 'http://example.ngrok
 console.log(otherListener.url()) // http://example.ngrok.io/ipn
 ```
 
-**myListener.post(httpOptions, [options])**
+#### myListener.post(httpOptions, [options])
 
 Post data to your listener, e.g. for testing. By default, this will not attempt to verify the IPN with PayPal.  Pass {verify : true } as the second paramter to override this behavior (e.g. for error testing).
 
