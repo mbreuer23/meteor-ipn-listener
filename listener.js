@@ -22,7 +22,6 @@ export const IpnListener = function(config) {
   const self = this;
   this._path = config.path;
   this._host = config.host || Meteor.absoluteUrl();
-  this._url = this._host.concat(this._path.slice(1));
   this._onVerified = [];
   this._onError = [];
   this._allow_sandbox = config.allow_sandbox || false;
@@ -52,7 +51,7 @@ IpnListener.prototype.handleIpns = function(data) {
 };
 
 IpnListener.prototype.url = function() {
-  return this._url;
+  return this._host.concat(this._path.slice(1));
 };
 
 IpnListener.prototype.post = function(httpOptions, options) {

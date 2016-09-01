@@ -5,7 +5,7 @@ import { Picker } from 'meteor/meteorhacks:picker';
 import { spies, stubs, sinon } from 'meteor/practicalmeteor:sinon';
 import { HTTP } from 'meteor/http';
 import { _ } from 'meteor/underscore';
-//
+
 const handlers = {
   success: function(error, ipn) {
     return ipn;
@@ -45,6 +45,12 @@ describe('IPN Listeners', function() {
   it('knows its own URL', function() {
     let url = Meteor.absoluteUrl('ipn');
     expect(myListener.url()).to.equal(url);
+  });
+
+  it('returns the correct url if the host is overriden', function() {
+    myListener._host = 'http://ngrok.io/';
+    expect(myListener.url()).to.equal('http://ngrok.io/ipn');
+    myListener._host = Meteor.absoluteUrl();
   });
 
   it('can have onVerified hooks added', function() {
