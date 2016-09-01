@@ -1,6 +1,6 @@
 Package.describe({
   name: 'planefy:paypal-ipn-listener',
-  version: '1.0.0',
+  version: '1.0.1',
   // Brief, one-line summary of the package.
   summary: 'Simple PayPal IPN listener for Meteor',
   // URL to the Git repository containing the source code for this package.
