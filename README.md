@@ -42,22 +42,22 @@ const myListener = new IpnListener(options);
 |---------|--------|:--------:|---------|-------------|
 | path    | String | Y        |  n/a    | the route path for the listener (include leading slash) |
 | allow_sandbox | Boolean | N | false   | Allow Sandbox IPNs (e.g. from PayPal's IPN Simulator).  Set to true in development |
-| host    | String | N        | Meteor.absoluteUrl() | Override the host in development, when using a tunnel (see below) |
+| host    | String | N        | Meteor.absoluteUrl() | Override the host when calling listener.url()|
 
 ### API  
 
-**myListener.onVerified(handler)**
+#### myListener.onVerified(handler)
 
 register a handler for verified ipns.  handler should be a function that accepts two arguments: error and ipn.
 
 You can register multiple handlers.  
 
-**myListener.onError(handler)**
+#### myListener.onError(handler)
 register a handler for errors, e.g. if the IPN can't be verified
 
 You can register multiple error handlers.
 
-**myListener.url()**
+#### myListener.url()
 
 Return the full URL of the registered listener
 
@@ -118,7 +118,7 @@ After ngrok starts, note the 'forwarding' url, and pass to your ipnListener, e.g
 ```javascript
 const myListener = new IpnListener({
   path: '/ipn',
-  host: 'http://1c2fce0e.ngrok.io/ipn/'   // **NOTE trailing slash!
+  host: 'http://1c2fce0e.ngrok.io/'   // **NOTE trailing slash!
 });
 ```
 
